@@ -193,6 +193,8 @@ header.solid~main .subnav{top:78px}
 .tbl .h>div{background:linear-gradient(90deg,#1d3a86,#2c4aa3);font-weight:700;font-size:.88rem}
 .tbl b{color:var(--gold)}
 .tbl small{display:block;color:var(--muted)}
+.tbl .r.c3{grid-template-columns:1.3fr 1fr .6fr}
+@media(max-width:640px){.tbl .r.c3{grid-template-columns:1fr}}
 .cta-box{max-width:620px;margin:0 auto;text-align:center;padding:40px;border-radius:18px;background:linear-gradient(150deg,rgba(255,255,255,.09),rgba(42,70,163,.25));border:1px solid var(--line)}
 .cta-box h3{font-size:1.8rem;font-weight:800;color:var(--gold);margin-bottom:8px}
 .cta-box p{color:var(--muted);margin-bottom:22px}
@@ -321,6 +323,9 @@ a.tc:hover{transform:translateY(-6px);border-color:var(--gold)}
   .b1{left:-6px}
 }
 @media(max-width:560px){.steps{grid-template-columns:1fr}.hero.page{padding:130px 0 70px}}
+
+.tri.t2{grid-template-columns:repeat(2,1fr);max-width:780px;margin:0 auto}
+@media(max-width:980px){.tri.t2{grid-template-columns:1fr}}
 textarea{font:inherit;color:var(--text);background:rgba(7,14,38,.7);border:1px solid rgba(255,255,255,.16);border-radius:10px;padding:13px 14px;resize:vertical;min-height:120px}
 textarea:focus{border-color:var(--gold);outline:none}
 .chk{display:flex;gap:10px;align-items:flex-start;font-size:.88rem}.chk input{margin-top:4px;accent-color:#f0c969}
@@ -407,6 +412,28 @@ textarea:focus{border-color:var(--gold);outline:none}
   .dm{grid-template-columns:50px 1fr;}.dm .w{grid-column:2;text-align:left}
 }
 @media(max-width:640px){.sgrid,.hub,.tips{grid-template-columns:1fr}.ckbox,.qz .bd{padding:22px}.tabs{grid-template-columns:1fr}}
+/* payment page */
+.back{display:inline-block;margin-bottom:26px;color:var(--gold);font-weight:600}.back:hover{text-decoration:underline}
+.pay{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}
+.sum,.co{padding:38px;border-radius:22px;border:1px solid var(--line);box-shadow:0 30px 70px rgba(0,0,0,.35)}
+.sum{position:sticky;top:100px;background:linear-gradient(150deg,rgba(255,255,255,.09),rgba(42,70,163,.32))}
+.co{background:linear-gradient(135deg,rgba(42,70,163,.5),rgba(16,29,69,.92))}
+.sum h2{font-size:clamp(1.5rem,2.6vw,2rem);font-weight:800;line-height:1.2;margin:10px 0 18px}
+.price{font-size:4.2rem;font-weight:800;color:var(--gold);line-height:1}
+.pnote{color:var(--muted);font-size:.9rem;margin:8px 0 22px}
+.det{list-style:none;display:grid;gap:0;margin-bottom:26px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.1)}
+.det li{display:flex;justify-content:space-between;gap:12px;padding:13px 16px;background:rgba(10,19,48,.55);border-top:1px solid rgba(255,255,255,.07)}
+.det li:first-child{border-top:0}.det span{color:var(--muted)}.det b{color:#fff;text-align:right}
+.sum h3{font-size:1.1rem;margin-bottom:12px}
+.inc{list-style:none;display:grid;gap:11px}
+.inc li{display:flex;gap:12px;align-items:flex-start;color:#e7ecfb}
+.inc li:before{content:"\2713";flex:none;width:22px;height:22px;border-radius:50%;background:rgba(240,201,105,.16);color:var(--gold2);display:grid;place-items:center;font-size:.75rem;margin-top:2px}
+.co h2{font-size:1.8rem;font-weight:800}.cop{color:var(--muted);margin:6px 0 22px}
+.total{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;border-radius:12px;background:rgba(7,14,38,.6);border:1px solid var(--line)}
+.total b{font-size:1.7rem;color:var(--gold)}
+.how{margin-top:24px;padding:18px 20px;border-radius:12px;background:rgba(240,201,105,.08);border:1px dashed var(--line)}
+.how h4{color:var(--gold);margin-bottom:6px}.how p{color:var(--muted);font-size:.92rem}
+@media(max-width:980px){.pay{grid-template-columns:1fr}.sum{position:static}.sum,.co{padding:26px}}
 </style>
 </head>
 <body>
@@ -444,7 +471,7 @@ textarea:focus{border-color:var(--gold);outline:none}
         <a href="courses.html" class="on">Courses <span class="car">&#9662;</span></a>
         <button class="sub-toggle" type="button" aria-label="Show courses menu" aria-expanded="false">&#9662;</button>
         <ul class="dd-menu">
-          <li><a href="courses.html">CISA Revision Bootcamp</a></li>
+          <li><a href="courses.html">CISA Revision Mock Exam Bootcamp</a></li>
           <li><a href="courses.html#domains">CISA Domains</a></li>
           <li><a href="index.html#agenda">Class Agenda</a></li>
           <li><a href="index.html#session">Choose Your Session</a></li>
@@ -517,7 +544,7 @@ textarea:focus{border-color:var(--gold);outline:none}
   <div class="wrap">
     <div class="crumb"><a href="index.html">Home</a><span>/</span><b>Courses</b></div>
     <h1>Our Courses</h1>
-    <h2>5-Day Intensive CISA Revision Bootcamp</h2>
+    <h2>5-Day Intensive CISA Revision Mock Exam Bootcamp</h2>
     <p class="sub">A comprehensive review with proven strategies to help you pass the CISA exam with confidence.</p>
     <div class="btns"><a href="index.html#register" class="btn btn-hot">Register for the Bootcamp</a><a href="#explore" class="btn btn-ghost">Explore the course</a></div>
   </div>
@@ -527,7 +554,7 @@ textarea:focus{border-color:var(--gold);outline:none}
 <section class="sec bgA" id="explore">
   <div class="wrap">
     <h2 class="title grad">Certified Information Systems Auditor</h2>
-    <p class="lead">Everything about the Crown CISA Revision Bootcamp, in one place.</p>
+    <p class="lead">Everything about the Crown CISA Revision Mock Exam Bootcamp, in one place.</p>
     <div class="explorer">
       <div class="tabs" role="tablist" aria-label="Course details">
         <button role="tab" aria-selected="true" data-p="p1"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16v.5"/></svg>Overview</button>
@@ -536,7 +563,7 @@ textarea:focus{border-color:var(--gold);outline:none}
         <button role="tab" aria-selected="false" data-p="p4"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-4 3-6 7-6s7 2 7 6M17 5a3.5 3.5 0 0 1 0 7M22 20c0-3-1.5-5-4-5.6"/></svg>Who it's for</button>
       </div>
       <div>
-        <div class="pane on" id="p1"><h3>5-Day Intensive CISA Revision Bootcamp</h3>
+        <div class="pane on" id="p1"><h3>5-Day Intensive CISA Revision Mock Exam Bootcamp</h3>
           <div><p>Pass your CISA exam with confidence. The Crown Bootcamp gives you a comprehensive review of the exam with strategies you can use on exam day.</p><p>Expert instructors guide you through in-depth domain coverage, real-world scenarios and exam-standard questions over five intensive days.</p>
             <div class="tags"><span>5 days</span><span>Virtual</span><span>8pm to 11pm</span></div><a href="index.html#register" class="btn btn-hot">Register now</a></div>
           <div class="img"><svg viewBox="0 0 420 290" role="img" aria-label="Instructor at a desk"><use href="#deskScene"/></svg></div></div>
@@ -544,7 +571,7 @@ textarea:focus{border-color:var(--gold);outline:none}
           <div><ul><li>Expert instructors who guide you through each topic</li><li>In-depth domain coverage</li><li>Real-world scenarios</li><li>Proven exam techniques</li><li>Practice with exam-standard questions</li><li>Comprehensive review and strategies</li></ul></div>
           <div class="img"><svg viewBox="0 0 420 290" role="img" aria-label="Instructor at a desk"><use href="#deskScene"/></svg></div></div>
         <div class="pane" id="p3"><h3>Schedule</h3>
-          <div><ul><li>Next batch starts 1st November 2026</li><li>Five intensive days</li><li>Time: 8pm to 11pm</li><li>Location: Virtually</li></ul><div class="tags"><span>Starts 1 Nov 2026</span></div><a href="index.html#session" class="btn btn-hot">Choose your session</a></div>
+          <div><ul><li>Next batch starts 30th November 2026</li><li>Five intensive days</li><li>Time: 8pm to 11pm</li><li>Location: Virtually</li><li>Fee: &pound;550</li></ul><div class="tags"><span>Starts 30 Nov 2026</span><span>&pound;550</span></div><a href="index.html#session" class="btn btn-hot">Choose your session</a></div>
           <div class="img"><svg viewBox="0 0 420 290" role="img" aria-label="Instructor at a desk"><use href="#deskScene"/></svg></div></div>
         <div class="pane" id="p4"><h3>Who it's for</h3>
           <div><ul><li>Auditors</li><li>Security professionals</li><li>IT consultants</li><li>Risk managers</li><li>Graduates</li></ul></div>
@@ -560,13 +587,14 @@ textarea:focus{border-color:var(--gold);outline:none}
     <h2 class="title">Course <span class="gold">at a glance</span></h2>
     <p class="lead">The essentials, so you can decide quickly.</p>
     <div class="tbl" style="max-width:860px">
-      <div class="r three h"><div>Detail</div><div>Crown CISA Revision Bootcamp</div></div>
-      <div class="r three"><div><b>Format</b></div><div>5-day intensive revision bootcamp</div></div>
-      <div class="r three"><div><b>Next batch</b></div><div>1st November 2026</div></div>
+      <div class="r three h"><div>Detail</div><div>Crown CISA Revision Mock Exam Bootcamp</div></div>
+      <div class="r three"><div><b>Format</b></div><div>5-day intensive revision mock exam bootcamp</div></div>
+      <div class="r three"><div><b>Next batch</b></div><div>30th November 2026</div></div>
       <div class="r three"><div><b>Time</b></div><div>8pm to 11pm</div></div>
+      <div class="r three"><div><b>Fee</b></div><div>&pound;550</div></div>
       <div class="r three"><div><b>Location</b></div><div>Virtually</div></div>
       <div class="r three"><div><b>Focus</b></div><div>Comprehensive review, strategies and exam-standard questions</div></div>
-      <div class="r three"><div><b>Registration</b></div><div>On the website, or email register@crownbootcamp.com</div></div>
+      <div class="r three"><div><b>Registration</b></div><div>On the website</div></div>
     </div>
   </div>
 </section>
@@ -591,7 +619,7 @@ textarea:focus{border-color:var(--gold);outline:none}
 <section class="sec bgB">
   <div class="wrap">
     <h2 class="title">Why take the <span class="gold">Crown CISA Bootcamp</span></h2>
-    <p class="lead">Four reasons candidates pick a focused revision bootcamp.</p>
+    <p class="lead">Four reasons candidates pick a focused revision mock exam bootcamp.</p>
     <div class="hg">
       <div class="hc"><svg viewBox="0 0 64 64"><circle cx="24" cy="22" r="9"/><circle cx="46" cy="26" r="7"/><path d="M8 52c0-9 7-15 16-15s16 6 16 15M40 40c8 0 16 4 16 12"/></svg><h3>Expert instructors</h3><span class="bar"></span><p>Guidance from <b>instructors</b> who explain the reasoning, not just the answers.</p></div>
       <div class="hc"><svg viewBox="0 0 64 64"><path d="M32 8l6 16 18 2-13 12 4 18-15-9-15 9 4-18L8 26l18-2z"/></svg><h3>Proven exam techniques</h3><span class="bar"></span><p>Strategies for <b>every type of question</b> you will meet on exam day.</p></div>
@@ -609,15 +637,15 @@ textarea:focus{border-color:var(--gold);outline:none}
     <div class="acc">
       <div><button aria-expanded="true">How long is the bootcamp?<i>+</i></button><div class="ans open"><div><div class="in">Five intensive days, with sessions from 8pm to 11pm.</div></div></div></div>
       <div><button aria-expanded="false">Where is it held?<i>+</i></button><div class="ans"><div><div class="in">Virtually, so you can join from wherever you are.</div></div></div></div>
-      <div><button aria-expanded="false">When is the next batch?<i>+</i></button><div class="ans"><div><div class="in">1st November 2026.</div></div></div></div>
+      <div><button aria-expanded="false">When is the next batch?<i>+</i></button><div class="ans"><div><div class="in">30th November 2026.</div></div></div></div>
       <div><button aria-expanded="false">Does it cover all the domains?<i>+</i></button><div class="ans"><div><div class="in">Yes. The bootcamp offers in-depth domain coverage, supported by real-world scenarios and exam-standard questions.</div></div></div></div>
-      <div><button aria-expanded="false">How do I register?<i>+</i></button><div class="ans"><div><div class="in">Register on the website, email <a class="gold" href="mailto:register@crownbootcamp.com">register@crownbootcamp.com</a> or call <a class="gold" href="tel:+18003456789">+1 800 345 6789</a>.</div></div></div></div>
+      <div><button aria-expanded="false">How do I register?<i>+</i></button><div class="ans"><div><div class="in">Register on the website. You will be taken to a payment page to complete your registration.</div></div></div></div>
     </div>
   </div>
 </section>
 
 <section class="final">
-  <div class="wrap"><h2>Ready to start your CISA revision?</h2><p>Secure your seat for the 1st November 2026 bootcamp.</p><a href="index.html#register" class="btn btn-hot">Enroll in the Bootcamp now!</a></div>
+  <div class="wrap"><h2>Ready to start your CISA revision?</h2><p>Secure your seat for the 30th November 2026 bootcamp.</p><a href="index.html#register" class="btn btn-hot">Enroll in the Bootcamp now!</a></div>
   <svg class="mt" viewBox="0 0 1600 220" preserveAspectRatio="none" aria-hidden="true"><path d="M0 120 L160 50 L300 110 L480 20 L660 115 L840 55 L1020 120 L1200 40 L1380 110 L1600 60 V220 H0Z" fill="#101d45"/><path d="M0 170 L200 110 L380 165 L580 100 L780 170 L980 115 L1180 172 L1400 112 L1600 160 V220 H0Z" fill="#070d26"/></svg>
 </section>
 </main>
@@ -628,11 +656,11 @@ textarea:focus{border-color:var(--gold);outline:none}
     <div class="fg">
       <div>
         <a href="index.html" class="logo"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M4 30 L8 12 L16 21 L20 8 L24 21 L32 12 L36 30 Z" fill="#f0c969"/><rect x="5" y="32" width="30" height="4" rx="2" fill="#f7e0a3"/></svg><div>CROWN BOOTCAMP<small>CISA TRAINING</small></div></a>
-        <p class="d">5-Day Intensive CISA Revision Bootcamp. Comprehensive review and strategies to help you pass with confidence.</p>
+        <p class="d">5-Day Intensive CISA Revision Mock Exam Bootcamp. Comprehensive review and strategies to help you pass with confidence.</p>
       </div>
       <div><h4>Bootcamp</h4><ul><li><a href="index.html#takeaways">Key Takeaways</a></li><li><a href="index.html#agenda">Class Agenda</a></li><li><a href="index.html#attend">Who Should Attend</a></li><li><a href="index.html#session">Choose Your Session</a></li></ul></div>
       <div><h4>Explore</h4><ul><li><a href="courses.html">Courses</a></li><li><a href="success-stories.html">Success Stories</a></li><li><a href="resources.html">Resources</a></li><li><a href="about.html">About Us</a></li><li><a href="index.html#faq">FAQ</a></li></ul></div>
-      <div><h4>Contact Us</h4><ul><li><a href="https://www.crownbootcamp.com">www.crownbootcamp.com</a></li><li><a href="mailto:register@crownbootcamp.com">register@crownbootcamp.com</a></li><li><a href="tel:+18003456789">+1 800 345 6789</a></li><li>Location: Virtually</li></ul></div>
+      <div><h4>Contact Us</h4><ul><li><a href="https://www.crownbootcamp.com">www.crownbootcamp.com</a></li><li><a href="mailto:register@crownbootcamp.com">register@crownbootcamp.com</a></li><li>Location: Virtually</li></ul></div>
     </div>
     <div class="copy"><span>&copy; <span id="yr">2026</span> Crown Bootcamp. All rights reserved.</span><span>CISA is a certification of ISACA.</span></div>
   </div>
